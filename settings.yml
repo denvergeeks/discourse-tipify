@@ -1,4 +1,4 @@
-linked_words:
+tipified_words:
   type: string
   default: |
     [
