@@ -2,7 +2,7 @@ import Component from "@ember/component";
 import { service } from "@ember/service";
 import DTooltip from "float-kit/components/d-tooltip";
 
-export default class TooltipWrapper extends Component {
+export default class TipifyWrapper extends Component {
   @service site;
 
   onRegisterApi(instance) {
@@ -40,7 +40,7 @@ export default class TooltipWrapper extends Component {
       @inline={{true}}
       @onRegisterApi={{this.onRegisterApi}}
       @triggers={{this.triggers}}
-      @identifier="tooltipfy"
+      @identifier="tipify"
     >
       <:trigger>{{this.data}}</:trigger>
       <:content>{{this.value}}</:content>
