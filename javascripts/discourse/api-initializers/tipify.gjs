@@ -1,6 +1,6 @@
 import { htmlSafe } from "@ember/template";
 import { apiInitializer } from "discourse/lib/api";
-import TooltipWrapper from "../components/tooltip-wrapper";
+import TipifyWrapper from "../components/tipify-wrapper";
 import { readInputList, traverseNodes } from "../lib/utilities";
 
 export default apiInitializer("0.11.1", (api) => {
@@ -23,12 +23,12 @@ export default apiInitializer("0.11.1", (api) => {
 
   const createTooltip = (helper, text, value) => {
     let span = document.createElement("span");
-    span.className = "tooltipfy-word";
+    span.className = "tipify";
 
     helper.renderGlimmer(
       span,
       <template>
-        <TooltipWrapper @data={{text}} @value={{htmlSafe value}} />
+        <TipifyWrapper @data={{text}} @value={{htmlSafe value}} />
       </template>
     );
 
@@ -43,8 +43,8 @@ export default apiInitializer("0.11.1", (api) => {
     }
   }
 
-  let linkify = new Action("linked_words", createTooltip);
-  let actions = [linkify];
+  let tipify = new Action("tipified_words", createTooltip);
+  let actions = [tipify];
   actions.forEach(readInputList);
 
   api.decorateCookedElement(
