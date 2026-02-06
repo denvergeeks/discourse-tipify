@@ -1,1 +1,11 @@
-// Theme's SCSS
+.tipify {
+  border-bottom: 1px dotted;
+  display: inline-block;
+  line-height: normal;
+}
+
+[data-identifier="tipify"] {
+  .fk-d-tooltip__inner-content {
+    display: block;
+  }
+}
