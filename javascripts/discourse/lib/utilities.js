@@ -43,7 +43,7 @@ const prepareRegex = function (input) {
   } catch (err) {
     // eslint-disable-next-line no-console
     console.error(
-      "ERROR from auto-linkify theme: Invalid input:",
+      "ERROR from tipify theme: Invalid input:",
       wordOrRegex,
       err.message
     );
